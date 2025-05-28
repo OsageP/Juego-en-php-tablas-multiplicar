@@ -1,7 +1,6 @@
 # 🎮 Juego de Tablas de Multiplicar en PHP
 
-[![Captura del Juego](juego/img/captura.png)](juego/index.php)  
-*Haz clic en la imagen para probar el juego (si está hosteado).*
+[![Captura del Juego](juego/img/captura.png)
 
 ## 📚 Descripción
 Juego educativo interactivo para practicar las tablas de multiplicar, ideal para niños. Genera preguntas aleatorias, valida respuestas y muestra puntuación.
