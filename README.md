@@ -1,39 +1,74 @@
-# 🧮 Juego de Tablas de Multiplicar en PHP
+# 🎮 Juego de Tablas de Multiplicar en PHP
 
-¡Aprende las tablas de multiplicar jugando! Proyecto desarrollado con PHP, HTML, CSS y JavaScript.
+[![Captura del Juego](juego/img/captura.png)](juego/index.php)  
+*Haz clic en la imagen para probar el juego (si está hosteado).*
 
-## 🚀 Cómo Ejecutarlo
-1. **Requisitos**: Servidor web (XAMPP, WAMP, o `php -S localhost:8000`).
-2. **Clonar el repositorio**:
-   ```bash
-   git clone https://github.com/OsageP/Juego-en-php-tablas-multiplicar.git
-Abrir el juego:
+## 📚 Descripción
+Juego educativo interactivo para practicar las tablas de multiplicar, ideal para niños. Genera preguntas aleatorias, valida respuestas y muestra puntuación.
 
-Mueve la carpeta /juego/ a htdocs/ de XAMPP.
+## 🛠️ Cómo está construido
+### 🔧 Tecnologías
+| Componente | Tecnología |
+|------------|------------|
+| Backend    | PHP 7+     |
+| Frontend   | HTML5, CSS3, JavaScript |
+| Estructura | Arquitectura monolítica |
 
-Accede a http://localhost/juego.
+### 🧠 Lógica Principal
+```php
+<?php
+// Genera pregunta aleatoria
+$num1 = rand(1, 10);
+$num2 = rand(1, 10);
+$_SESSION['respuesta_correcta'] = $num1 * $num2;
 
-🛠 Tecnologías
-PHP: Lógica del juego.
+// Valida respuesta
+if ($_POST['respuesta'] == $_SESSION['respuesta_correcta']) {
+    $_SESSION['puntuacion']++;
+}
+?>
+🎨 Interfaz
+Diseño responsive (funciona en móviles y tablets)
 
-CSS: Diseño responsive.
+Feedback visual (colores para aciertos/errores)
 
-JavaScript: Validación en tiempo real.
+Animaciones CSS para mejor experiencia
 
-📌 Características
-Generación aleatoria de preguntas.
+🚀 Cómo ejecutarlo
+🔧 Requisitos
+Servidor web (XAMPP, WAMP, etc.)
 
-Puntuación basada en aciertos.
+PHP 7.0+
 
-Interfaz intuitiva para niños.
+Navegador moderno
 
-<<<<<<< HEAD
-📸 Captura
-![Captura del Juego](juego/img/captura.png)
+⚙️ Instalación
+bash
+git clone https://github.com/OsageP/Juego-en-php-tablas-multiplicar.git
+cd Juego-en-php-tablas-multiplicar
+mv juego /var/www/html/  # Para XAMPP
+
+📌 Características clave
+✔️ Generación aleatoria de preguntas
+✔️ Sistema de puntuación con sesiones PHP
+✔️ Validación en tiempo real con JavaScript
+✔️ Diseño amigable para niños
+
+📂 Estructura de archivos
+/juego/
+├── index.php        # Página principal
+├── style.css       # Estilos
+├── script.js       # Lógica frontend
+└── img/            # Assets visuales
+🛠️ Roadmap
+Añadir temporizador
+
+Implementar niveles de dificultad
+
+Guardar records en local en archivos txt
+
+👨‍💻 Autor
+OsageP - ¡Contribuciones son bienvenidas!
 
 📄 Licencia
-MIT - Usa, modifica y distribuye libremente.
-=======
-
-📄 Licencia
-MIT - Usa, modifica y distribuye libremente.
+MIT © 2023 - Libre para uso educativo
