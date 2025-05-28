@@ -27,6 +27,13 @@ Puntuación basada en aciertos.
 
 Interfaz intuitiva para niños.
 
+<<<<<<< HEAD
+📸 Captura
+![Captura del Juego](juego/img/captura.png)
+
+📄 Licencia
+MIT - Usa, modifica y distribuye libremente.
+=======
 
 📄 Licencia
 MIT - Usa, modifica y distribuye libremente.
