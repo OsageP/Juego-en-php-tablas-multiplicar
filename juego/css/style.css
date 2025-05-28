@@ -1,0 +1,406 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+    font-family: 'Source Code Pro', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    text-align: center;
+    background-color: #f0f8ff; /* Color de fondo predeterminado */
+}
+
+nav {
+    display: none;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Estilos para los subtítulos */
+.subtitle-container {
+    text-align: center;
+    display: inline-block;
+    padding: 10px 0; /* Reducimos el padding en la parte superior e inferior */
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #888;
+}
+
+/* Ajustes para diferentes niveles */
+.subtitle-container {
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #888;
+}
+
+.subtitle-container .subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 10px;
+    /* Alineación vertical del texto */
+    line-height: 1.5rem; /* Igualar al tamaño de fuente */
+    height: 100%; /* Ajustar al tamaño del contenedor */
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+}
+
+/* Estilo específico para el nivel "Pro" */
+.subtitle-container.pro {
+    height: 50px;
+    padding: 10px;
+    margin: 0;
+}
+
+.subtitle-container.easy { background-color: blue; color: white; }
+.subtitle-container.medium { background-color: green; color: white; }
+.subtitle-container.hard { background-color: orange; }
+.subtitle-container.pro { background-color: red; color: white; }
+.subtitle-container.hacker { background: linear-gradient(to bottom, red, black); color: white; }
+
+.container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    padding-bottom: 80px;
+}
+
+.container h1 {
+    font-weight: 400;
+    margin-bottom: 20px;
+    user-select: none;
+}
+
+.buttons {
+    padding: 12.5px 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.15), 0px 1px 2px 0px rgba(0,0,0,0.075), 0px 4px 10px 0px rgba(0,0,0,0.05);
+    user-select: none;
+    margin-top: 20px;
+}
+
+.buttons:active {
+    background: hsl(0deg, 0%, 98%);
+}
+
+#settingsButton {
+    position: fixed;
+    top: 5vh;
+    right: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegurémonos de que esté encima de otros elementos */
+}
+
+#settingsButton img {
+    width: 50%;
+    height: auto;
+}
+
+.usage {
+    margin-top: 20px;
+    background: hsl(0deg, 0%, 97.5%);
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: text;
+    font-size: 1.5rem;
+}
+
+.usage::selection,
+.usage span::selection {
+    color: hsl(220deg, 90%, 65%);
+    background: rgba(0,0,0,0.1);
+}
+
+.usage br::selection {
+    color: transparent;
+}
+
+.code-comment { color: hsla(0deg, 0%, 70%); }
+.code-str { color: hsl(130deg, 50%, 65%); }
+.code-num { color: hsl(25deg, 90%, 70%); }
+.code-var { color: hsl(0deg, 90%, 65%); }
+.code-func { color: hsl(220deg, 90%, 65%); }
+.code-extra { color: hsl(285deg, 80%, 70%); }
+
+.container a {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    background: hsl(220deg, 90%, 65%);
+    box-shadow: 0px 3px 0px hsl(220deg, 65%, 55%), inset 0px -1px 0px hsl(220deg, 100%, 70%);
+    padding: 12.5px 40px;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+    user-select: none;
+}
+
+.container a:active { opacity: 0.2; }
+
+.container a img {
+    height: 17px;
+    margin-right: 10px;
+    user-select: none;
+}
+
+/* Estilos para la imagen */
+#imagen-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#imagen-container img {
+    width: 50%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.mostrar {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Estilos específicos para elementos HTML */
+h1 { font-size: 2rem; }
+
+#question { font-size: 3rem; }
+
+button {
+    font-size: 2rem;
+    margin: 20px;
+    padding: 20px;
+}
+#restart {
+    font-size: 1.5rem;
+    padding: 10px;
+    display: none;
+    background-color: #f44336;
+    color: white;
+    /* Eliminamos la posición fija */
+    /* z-index: 1000; */
+}
+ .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+.correct { background-color: #98fb98; }
+.incorrect { background-color: #ffcccc; }
+
+.incorrect-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#puntuacion {
+    font-size: 2rem;
+    color: #000000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 2;
+    opacity: 0;
+    transition: transform 2s ease-in-out, opacity 2s ease-in-out;
+}
+
+/* Estilo para la barra de tiempo */
+#time-progress-bar {
+    width: 200px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: visible;
+	 margin: 0 auto; /* Centrar horizontalmente */
+}
+
+#time-bar {
+    width: 100%;
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+/* Estilos para el temporizador */
+#time-display {
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    margin-top: 5px;
+}
+
+/* Estilos para las tablas de puntuaciones */
+.container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container th, .container td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.container th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+.container .resaltado {
+    background-color: #ffc107;
+}
+
+.container tr:hover {
+    background-color: #f5f5f5;
+}
+
+.container tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.container td:first-child, .container th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.container td:last-child, .container th:last-child {
+    border-top-right-radius: 10px;
+}
+
+
+/* Estilos para los botones de respuesta */
+.option {
+    font-size: 2rem;
+	font-weight: bold;
+    padding: 15px 15px;
+    margin: 10px;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, border-color 0.3s;
+    width: 90px; /* Ancho fijo para los botones */
+}
+
+
+.option.correct {
+    background-color: #98fb98; /* Verde claro para respuesta correcta */
+    border-color: #4caf50;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #f0f8ff; /* Cambiamos el color de fondo al mismo que el body */
+    padding: 10px;
+    border-top: none; /* Eliminamos la línea superior */
+    font-size: 9px; /* Reducimos el tamaño de la fuente */
+}
+
+
+/* Estilos adicionales para hacer la tabla más responsive */
+@media only screen and (max-width: 768px) {
+    .container table {
+        font-size: 1rem;
+    }
+    .container th, .container td {
+        padding: 12px;
+    }
+}
+
+/* Estilo para dispositivos móviles */
+@media only screen and (max-width: 480px) {
+    .container table {
+        font-size: 0.9rem;
+    }
+    .container th, .container td {
+        padding: 10px;
+    }
+    .buttons {
+        font-size: 1.2rem;
+        padding: 10px 30px;
+    }
+}
+
+/* Estilo para dispositivos de pantalla pequeña */
+@media only screen and (max-width: 768px) {
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+}
+/* Estilo para dispositivos móviles Iphone4*/
+@media only screen and (max-width: 320px) {
+    .option {
+        font-size: 1.8rem;
+        padding: 8px 8px;
+        margin: 5px;
+        width: 85px; /* Ancho fijo para los botones */
+    }
+}
